@@ -5,11 +5,30 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1 class="headline"> All Lists </h1>
+    </header>
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-list-item">
+          <%= link_to "Top", top_path %>
+        </li>
+        <li class="nav-list-item">
+          <%= link_to "TodoLists", todolists_path %>
+        </li>
+        <li class="nav-list-item">
+          <%= link_to "New List", todolists_new_path %>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
