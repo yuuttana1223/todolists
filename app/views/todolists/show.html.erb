@@ -2,3 +2,7 @@
 <p><%= @list.title%></p>
 <h2>本文</h2>
 <p><%= @list.body %></p>
+<p>画像</p>
+<!--attachment_image_tag モデル名, :カラム名, :fill(またはsize), 横幅, 高さ, format: '拡張子' -->
+<%= attachment_image_tag @list, :image, :fill, 300, 300, format: 'jpeg' %>
+<%= link_to "編集", edit_todolist_path(@list.id) %>

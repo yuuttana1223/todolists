@@ -2,4 +2,7 @@
 <% @lists.each do |list|  %>
   <p>タイトル</p>
   <span><%= link_to list.title, todolist_path(list.id) %></span>
+  <p>画像</p>
+  <!--attachment_image_tag モデル名, :カラム名, :fill(またはsize), 横幅, 高さ, format: '拡張子' -->
+  <%= attachment_image_tag list, :image, :fill, 100, 100, format: 'jpeg' %>
 <% end %>
